@@ -21,7 +21,6 @@ const historySchema = new mongoose.Schema({
     toObject: { virtuals: true }
 });
 
-// Middleware para adicionar o usuário e a palavra ao histórica ao pesquisar a palavra.
 historySchema.pre(/^find/, function (next) {
     this.populate({
         path: 'user',
