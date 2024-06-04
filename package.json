@@ -1,0 +1,22 @@
+{
+    "name": "dictionarychallenge",
+    "version": "1.0.0",
+    "description": "Challenge of job",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "author": "Kiyoshi Takahama",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.7.2",
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^5.13.22",
+        "morgan": "^1.10.0",
+        "nodemon": "^3.1.2",
+        "validator": "^13.12.0"
+    }
+}
