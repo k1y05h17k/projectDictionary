@@ -5,7 +5,7 @@ Este é um projeto realizado para pesquisar e gerenciar palavras do dicionário,
  
 > This is a challenge by [Coodesh](https://coodesh.com/)
 
-A descrição do desafio pode ser encontrada [aqui](https://github.com/k1y05h17k/projeto).
+A descrição do desafio pode ser encontrada [aqui](https://github.com/k1y05h17k/projectDictionary/main/challenge_description.md).
 
 ## Tecnologias utilizadas
 - Node.js 
@@ -14,6 +14,7 @@ A descrição do desafio pode ser encontrada [aqui](https://github.com/k1y05h17k
 - Mongoose 
 - Nodemon
 - Bcrypt
+- Axios
 - jwt
 
 ## Estrutura de Diretórios
@@ -61,47 +62,37 @@ Para rodar a aplicação
 npm run start
 ````
 
-## Como testar API com o Postman
-````
-Para testar a API, você pode usar o Postman:
-````
-1. Abra o Postman e crie um novo ambiente (opcional) com a variável {{base_url}} configurada para http://localhost:3000/api/v1/
-````
-2. Criar Requisição POST para Cadastrar um novo usuário:
+## Como testar a API com o Postman
 
-    URL: {{base_url}}/auth/signin
-````
+1. Abra o Postman e crie um novo ambiente (opcional) com a variável `{{base_url}}` configurada para http://localhost:3000/api/v1/
+2. Para criar um novo usuário:
+    - Tipo de requisição: POST
+    - URL: {{base_url}}/auth/signup
+    - Body:
+        ````  json  
+        {   
+            "name": "Users 1wss",
+            "email": "1exsdasdaample@email.com",
+            "password": "testxxxx",
+            "passwordConfirm": "testxxxx"
+        }
+        ````
+3. Na opção de script, adicione o código abaixo, para adicionar jwt nas variáveis de ambiente e usar na opção de autenticação Bearer:
 
-3. Na definição do body, seleione raw e JSON:
-    
-    { 
-    
-    "name": "Users 1wss",
-    "email": "1exsdasdaample@email.com",
-    "password": "testxxxx",
-    "passwordConfirm": "testxxxx"
-
-    }
-4. Na opção de script, adicione o código abaixo, para adicionar jwt nas variaveis de ambiente e usar na opção de autenticação Bearer: 
 ````
     pm.environment.set("jwt", pm.response.json().token);
 ````
 
-
-2. Criar Requisição POST para login usuário:
-
-    URL: {{base_url}}/auth/signin
-````
-
-3. Na definição do body, seleione raw e JSON:
-    
-    { 
-
-    "email": "1exsdasdaample@email.com",
-    "password": "testxxxx",
-
-    }
- 
+4. Para login usuário:
+    - Tipo de requisição: POST
+    - URL: {{base_url}}/auth/signin
+    - Body:
+        ```` json
+        { 
+            "email": "1exsdasdaample@email.com",
+            "password": "testxxxx",
+        }
+        ````
 
 
 
